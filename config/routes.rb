@@ -1,6 +1,18 @@
 Timeline::Application.routes.draw do
-  get 'wall/write' => 'wall#write'
-	post 'wall/posts' => 'wall#posts'
+  get "user/signup"
+	post "user/signup_complete"
+	get "user/login"
+	post "user/login_complete"
+	get "user/logout"
+  get "wall/write"
+	post "wall/write_complete"
+	get "wall/posts"
+	get "wall/edit/:id" => 'wall#edit'
+	post "wall/edit_complete"
+	get "wall/delete/:id" => 'wall#delete'
+	post "wall/delete_complete"
+	get "wall/write_comment/:id" => 'wall#write_comment'
+	post "wall/write_comment_complete"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
